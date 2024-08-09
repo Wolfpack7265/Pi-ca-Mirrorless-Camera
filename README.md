@@ -1,7 +1,7 @@
 # Pi-ca-Mirrorless-Camera
 Interchangeable lens mirrorless camera project, using Raspberry pi HQ camera module
 
-Intro:
+#Intro
 raspberry pi camera project to produce an open-source, feature-packed camera using the raspberry pi HQ camera module. The idea for this project came from the desire to get a secondary point-and-shoot camera for my daily photography. Instead of buying from the list of overpriced digicams on facebook marketplace, I decided to create something with the features I wanted most!
 
 At the heart of the pi-ca is the raspberry pi HQ module, which utlizes Sony's IMX477 Image sensor. The sensor features the following specs for photos:
