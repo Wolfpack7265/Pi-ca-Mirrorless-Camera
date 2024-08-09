@@ -29,6 +29,7 @@ Planned Features (v0)-------------------------------------------------
 
 The initial version of this project will be a proof of concept for later versions, and will obviously be missing some polish and usability:
 - photo-centric philosophy and design
+- 3D-printed case
 - C/CS mount for lenses
 - LCD screen with UI and menus
 - shutter button, maybe buttons for UI navigation
