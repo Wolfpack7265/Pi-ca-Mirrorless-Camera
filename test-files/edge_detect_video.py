@@ -78,7 +78,7 @@ def main(config_file_path):
 
 
 if __name__ == "__main__":
-    config_file_path = "config.ini"
+    config_file_path = "config_test.ini"
     main(config_file_path)
 # while(1):
 
