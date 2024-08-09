@@ -39,6 +39,7 @@ The initial version of this project will be a proof of concept for later version
 - easily removable/rechargable battery options
 - dedicated SD card slot for photo/video storage
 - tripod mount (1/4-20), body accessory mounts?
+- configuration file/ stored settings
 
 Future/Potential features to be added? (v1+) -------------------------------------------------
 - all video features (1080p 240, 4k 60, etc.)
@@ -46,4 +47,5 @@ Future/Potential features to be added? (v1+) -----------------------------------
 - mount change to E-mount?
 - Contrast Detection Auto focus
 - Intervalometer/timelapse settings
+- Electronic/digital image stabalization 
 - many more!
