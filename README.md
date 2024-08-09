@@ -23,6 +23,8 @@ For video, it gets even better, with a list of features that even compare to cam
 - Full sensor readout (4056 x 3040) @ up to 60fps
 - up to 12 bit RAW output in full sensor format
 
+full documentation is provided by sony: https://www.sony-semicon.com/files/62/pdf/p-13_IMX477-AACK_Flyer.pdf
+
 Planned Features (v0)-------------------------------------------------
 
 The initial version of this project will be a proof of concept for later versions, and will obviously be missing some polish and usability:
