@@ -3,6 +3,8 @@ import numpy as np
 import configparser
 from matplotlib import pyplot as plt
 
+img = 0
+
 def load_config(config_file_path):
     config = configparser.ConfigParser()
     config.read(config_file_path)
@@ -10,8 +12,8 @@ def load_config(config_file_path):
 
 
 def focus_peaking(frame, threshold=100, blur_kernel_size=(3, 3)):
-    # Convert the frame to grayscale
-    img = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    
+    
 
     # Apply Gaussian blur to the frame to reduce noise
     blurred_img = cv.GaussianBlur(img, blur_kernel_size, 0)
@@ -61,8 +63,6 @@ def histogram(img):
     cv.resizeWindow('calcHist Demo', 960, 540)
     cv.imshow('calcHist Demo', histImage)
 
-
-
 def main(config_file_path):
     # Load configuration from the file
     config = load_config(config_file_path)
@@ -85,15 +85,27 @@ def main(config_file_path):
             print("Error: Unable to capture frame.")
             break
 
-        # Apply focus peaking to the frame
-        threshold = int(config.get('FocusPeaking', 'Threshold'))
-        blur_kernel_size = eval(config.get('FocusPeaking', 'BlurKernelSize'))
-        output_frame = focus_peaking(frame, threshold, blur_kernel_size)
+        fp_boolean = int(config.get('FocusPeaking', 'Boolean'))
+        hist_boolean = int(config.get('Histogram', 'Boolean'))
 
-        # Display the frame with focus peaking
-        cv.namedWindow("Focus Peaking Test", cv.WINDOW_NORMAL) 
-        cv.resizeWindow("Focus Peaking Test", 960, 540)
-        cv.imshow("Focus Peaking Test", output_frame)
+        if fp_boolean or hist_boolean == 1:
+            global img
+            # Convert the frame to grayscale
+            img = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+
+        if fp_boolean == 1:
+            threshold = int(config.get('FocusPeaking', 'Threshold'))
+            blur_kernel_size = eval(config.get('FocusPeaking', 'BlurKernelSize'))
+            output_frame = focus_peaking(frame, threshold, blur_kernel_size)
+
+        elif hist_boolean == 1:
+            print("ya")
+        else:
+            output_frame = frame
+
+        cv.namedWindow('Pi-ca v0', cv.WINDOW_NORMAL) 
+        cv.resizeWindow('Pi-ca v0', 960, 540)
+        cv.imshow('Pi-ca v0', output_frame)
 
         # Exit when the 'q' key is pressed
         if cv.waitKey(1) & 0xFF == ord('q'):
